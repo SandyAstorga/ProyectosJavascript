@@ -1,0 +1,133 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root{
+    /* Font */
+    --shareTech: "Share Tech Mono", monospace;
+
+    /* Colors */
+    --emptySquare: #456998;
+    --snakeSquare: #ccf47f;
+    --foodSquare: #f35a69;
+    --start: darkmagenta;
+
+    /* Font Size */
+    --size: 25px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--shareTech) !important;
+    font-size: clamp(1.1rem, 2.5vw, .7rem) !important;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/JuegoSnake/assets/bg.svg);
+    background-size: contain;
+}
+
+.container{
+    margin: 2rem;
+    width: 400px;
+    position: relative;
+}
+
+#board, .boardInfo {
+    border: .2rem solid var(--emptySquare);
+    border-top: none;
+    max-width: 500px;
+}
+.boardInfo{
+    background: white;
+}
+
+#board {
+    background-color: var(--emptySquare);
+    display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    width: 400px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+}
+#board h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    font-size: 2rem !important;
+    text-align: center;
+}
+
+#start,  .boardInfo {
+    font-size: var(--size);
+}
+
+#gameOver {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    font-size: 2rem !important;
+    backdrop-filter: blur(.5rem);
+    filter: brightness(.6);
+}
+
+.boardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#start {
+    background-color: var(--start);
+    border: none;
+    box-shadow: 1px 1px 1px 1px black;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+#scoreBoard{
+    display: inline-flex;
+}
+
+.square {
+    aspect-ratio: 1;
+}
+.emptySquare {
+    background-color: var(--emptySquare);
+}
+.snakeSquare {
+    background-color: var(--snakeSquare);
+}
+.foodSquare {
+    background-color: var(--foodSquare);
+}
+
+/* Responsive */
+@media screen and (max-width: 550px){
+    .container{
+        width: 310px;
+    }
+    #board {
+        height: 310px;
+        width: 310px;
+    }
+    #gameOver {
+        width: 310px;
+        height: 310px;
+        font-size: 1.5rem !important;
+    }
+    #board h1{
+        font-size: 1.5rem !important;
+        width: 310px;
+    }
+}
