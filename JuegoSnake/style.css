@@ -113,6 +113,29 @@ body {
     background-color: var(--foodSquare);
 }
 
+#controls {
+    display: none;
+    justify-content: space-around;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: .5rem;
+}
+
+#controls button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-weight: 700;
+    font-size: .9rem !important;
+    cursor: pointer;
+}
+
+#controls .horizontal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+
 footer{
     display: flex;
     justify-content: center;
@@ -132,6 +155,12 @@ footer a{
 }
 
 /* Responsive */
+@media (max-width: 768px) {
+    #controls {
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 550px){
     .container{
         width: 310px;
