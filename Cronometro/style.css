@@ -1,0 +1,131 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    /* Colors */
+    --principal: #1d1d1d;
+    --neutro: #fff;
+    --bg: #456998;
+
+    /* Font-Family */
+    --roboto: "Roboto Mono", monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--roboto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+}
+h1{
+    color: var(--principal);
+}
+
+main {
+    position: relative;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 240px; 
+    height: 240px; 
+    border: 1px solid var(--neutro);
+    color: var(--neutro);
+    font-size: 3rem;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circle::before {
+    content: '';
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    width: 320px; 
+    height: 320px;
+    left: calc(50% - 160px);
+    top: calc(50% - 160px);
+    background-color: var(--principal);
+}
+
+.seconds-sphere {
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%;
+    background-color: var(--neutro);
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    animation: rotacion 60s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotacion {
+    from {
+        transform: rotate(-90deg) translateX(120px); 
+    }
+    to {
+        transform: rotate(270deg) translateX(120px);
+    }
+}
+
+.buttons {
+    margin-top: 10px;
+    display: inline-flex;
+}
+
+.paused {
+    height: 30px;
+    border-width: 15px 0 15px 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 30px;
+    border-color: transparent transparent transparent var(--neutro);
+    transition: 100ms all ease;
+    will-change: border-width;
+    border-style: solid;
+}
+
+.running {
+    border-style: double;
+    border-width: 0 0 0 20px;
+}
+
+.stop {
+    background-color: var(--neutro);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+    color: var(--principal);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+}
+footer a:hover{
+    color: var(--neutro);
+}
