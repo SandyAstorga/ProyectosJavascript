@@ -1,0 +1,139 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+:root {
+    --color-terminal: #292b36;
+    --resultado: #5af78d;
+    --bg: #5c4b7a;
+
+    --border-app: 4px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Code Pro", monospace;;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    color: white;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+main {
+    margin: .5rem;
+    width: 500px;
+    padding: 25px;
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);
+    border-radius: var(--border-app);
+}
+
+h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#input-original, #resultado {
+    background-color: var(--color-terminal);
+    width: -webkit-fill-available;
+}
+
+#input-original {
+    margin: 10px 0 0;
+    padding: 10px;
+    color: white;
+    border-top-left-radius: var(--border-app);
+    border-top-right-radius: var(--border-app);
+}
+
+#resultado {
+    height: 30px;
+    color: var(--resultado);
+    padding: 0 10px 10px;
+    border-bottom-left-radius: var(--border-app);
+    border-bottom-right-radius: var(--border-app);
+}
+
+.rango {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    text-align: center;
+    align-items: center;
+}
+
+input[type='range']{
+    -webkit-appearance: none;
+    border-radius: var(--border-app);
+    background: var(--color-terminal);
+    margin: 0;
+    padding: 0 5px;
+    height: 20px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: white;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .4rem;
+    border-radius: var(--border-app);
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover{
+    background: var(--color-terminal);
+    color: white;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+}
+footer a:hover{
+    color: var(--color-terminal);
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        width: 320px;
+    }
+}
