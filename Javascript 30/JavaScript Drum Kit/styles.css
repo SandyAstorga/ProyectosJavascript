@@ -1,0 +1,132 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+
+
+:root{
+    --font: 'Alef', sans-serif;
+    --size: 16px;
+
+    --keys: #2B2A4C;
+    --keysBG: rgb(38, 80, 115, 90%);
+
+    --keyhoverBG: #7071E8;
+    --keyhovercolor: #C683D7;
+
+    --spanhovercolor: #29ADB2;
+    --spankeyhovercolor: #054779;
+
+}
+
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+
+}
+html{
+    background: url(./images/concert.jpg) bottom center;
+    background-size: cover;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+h1{
+    color: var(--keys);
+    font-weight: 700;
+    font-size: 3rem;
+    background-color: var(--keyhoverBG);
+    opacity: 0.9;
+    border-radius: .5rem;
+    width: 50rem;
+    text-align: center;
+}
+
+/* Container */
+.keys{
+    margin-top: 2.8rem;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); 
+    gap: 1.5rem; 
+}
+.keys div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+.drum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--keysBG);
+    color: var(--keys);
+    font-weight: 700;
+    font-size: 4rem;
+    border-radius: 1rem;
+    border-style: none;
+    height: 5rem;
+    width: 5.5rem;
+    padding: .5rem;
+    box-shadow: 2px 2px 2px 2px black;
+    cursor: pointer;
+}
+.drum:focus{
+    background-color: var(--keyhoverBG);
+    transform: scale(1.2);
+    border: .2rem solid var(--keyhovercolor);
+}
+
+/* Span */
+.sound{
+    margin-top: .5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--keyhoverBG);
+    background-color: #2B2A4C;
+    padding: .2rem;
+    border-radius: .5rem;
+}
+
+
+/* Footer */
+footer{
+    border-radius: 2rem;
+    text-align: center;
+    margin-top: 5rem;
+    background-color: var(--keys);
+    width: 20rem;
+    color: var(--keyhoverBG);
+    font-weight: 700;
+    font-size: 1.18rem;
+}
+footer a{
+    color: var(--spanhovercolor);
+    text-decoration: none;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 770px){
+    h1{
+        font-weight: 700;
+        font-size: 2rem;
+        width: 22rem;
+    }
+    .keys{
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2rem; 
+    }
+}
+

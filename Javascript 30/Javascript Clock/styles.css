@@ -1,0 +1,134 @@
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+body{
+    min-height: 100vh;
+    background-color: #7743DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
+    color: #132043;
+}
+h4{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #132043;
+    font-size: 1.5rem;
+}
+
+/* Container */
+.clock{
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid #7ED7C1;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 
+        0 0 0px 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #F0DBAF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+    background: #B06161;
+    border-radius: 50%;
+}
+
+/* Hands */
+.hand{
+    width: 50%;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand{
+    background: #161A30;
+    border-radius: 2rem;
+}
+.min-hand{
+    background: #31304D;
+    border-radius: 2rem;
+}
+.second-hand{
+    background: #B6BBC4;
+    border-radius: 2rem;
+}
+
+/* Numbers */
+.numbers{
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    transform: translateY(-275px);
+    display: flex;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #161A30;
+    font-weight: 700;
+}
+
+.numbers .top{
+    font-size: 2.2rem;
+    margin-top: -280px;
+    transform: translateX(119px);
+}
+.numbers .right{
+    font-size: 2.2rem;
+    margin-top: 10px;
+    transform: translateX(240px);
+}
+.numbers .bootom{
+    font-size: 2.2rem;
+    margin-top: 294px;
+    transform: translateX(76px);
+}
+.numbers .left{
+    font-size: 2.2rem;
+    margin-top: 10px;
+    transform: translateX(-87px);
+}
+
+/* Footer */
+footer{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: -1rem;
+}
+footer a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #132043;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 650px) {
+    h1, h4{
+        transform: translateX(7%);
+    }
+
+    footer{
+        transform: translateX(7.2%);
+        margin-top: -2rem;
+    }
+}

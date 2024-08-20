@@ -1,0 +1,125 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;700&display=swap');
+
+
+:root{
+    --base: #5FBDFF;
+    --spacing: 10px;
+    --blur: 0px;
+
+    --bg: #67729D;
+    --font: 'Playpen Sans', cursive;
+    --size: 15px;
+
+    --generalcolor: #22092C;
+}
+
+
+/* General */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: var(--font);
+    color: var(--generalcolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    width: 60%;
+}
+input{
+    width: 120px;
+    cursor: pointer;
+}
+label{
+    font-weight: 700;
+}
+
+/* Class */
+.container{
+    width: 830px;
+}
+.title{
+    padding: var(--size);
+    font-size: 1.5rem;
+    text-align: center;
+}
+.js{
+    color: var(--base);
+}
+.controls{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer */
+.footer{
+    margin-top: 1rem;
+    text-align: center;
+}
+.footer span{
+    font-weight: 700;
+    background: #5FBDFF;
+    padding: .4rem .7rem;
+    border-radius: 1rem;
+}
+.footer a{
+    text-decoration: none;
+    color: darkslateblue;
+}
+
+/* Responsive */
+@media screen and (max-width: 770px) {
+    .container{
+        width: 700px;
+    }
+
+    .title{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container{
+        width: 650px;
+    }
+    .title{
+        font-size: 1rem;
+    }
+    .controls{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container{
+        width: 580px;
+    }
+    .title{
+        font-size: .75rem;
+        
+    }
+    .controls{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
